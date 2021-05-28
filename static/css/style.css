@@ -46,8 +46,8 @@ body {
 /* This CSS styles the ufo icon in the navbar */
 .nav-ufo {
   position: absolute;
-  bottom: 5px;
-  left: 150px;
+  bottom: 15px;
+  left: 240px;
   width: 35px;
   color: white;
 }
