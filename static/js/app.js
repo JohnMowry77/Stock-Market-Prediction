@@ -1,4 +1,4 @@
-// console.log('hi')
+console.log('hi')
 var startdate=d3.select('#startdate')
 var enddate=d3.select('#enddate')
 
@@ -6,7 +6,8 @@ var filter_btn=d3.select('#filter-btn')
 
 filter_btn.on('click', function(e){
 	d3.json("/stocks").then(function(d) //get the json from /stocks
-	{console.log(d)
+	{
+		console.log(d)
 		
 	})
 	// e.preventDefault()

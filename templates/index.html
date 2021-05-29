@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 </head>
 
 <body>
@@ -54,20 +54,24 @@
         </div>
         <div class="col-md-10">
           <div id="table-area" class="">
-            <table id="ufo-table" class="table table-striped">
+            <p>{{ output | safe}} </p>
+<!--             <table id="ufo-table" class="table table-striped">
               <thead>
                 <tr>
                   <th class="table-head">labels</th>
                   <th class="table-head">companies</th>
-<!--                   <th class="table-head">Date</th>
+                  <th class="table-head">Date</th>
                   <th class="table-head">Ticker</th>
                   <th class="table-head">Sector</th>
-                  <th class="table-head">Industry</th> -->
+                  <th class="table-head">Industry</th>
                 </tr>
               </thead>
               <tbody></tbody>
-            </table>
+            </table> -->
           </div>
+        </div>
+        <div>
+          <img src="{{url_for('static', filename='charts/group_0.png')}}">
         </div>
       </div>
     </div>
@@ -75,8 +79,8 @@
       <span class="bottom">Stock Market Movement</span>
     </footer>
   </div>
-  <script src="https://d3js.org/d3.v5.js"></script>
-  <script src="{{url_for('static', filename='js/app.js')}}"></script>
+  <!-- <script src="https://d3js.org/d3.v5.js"></script> -->
+  <!-- <script src="{{url_for('static', filename='js/app.js')}}"></script> -->
 </body>
 
 </html>

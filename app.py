@@ -5,7 +5,12 @@ from matplotlib import pyplot as plt
 import pandas as pd
 import numpy as np
 import datetime
-
+from sklearn.decomposition import PCA 
+# import Normalizer
+from sklearn.preprocessing import Normalizer
+# import machine learning libraries
+from sklearn.pipeline import make_pipeline
+from sklearn.cluster import KMeans
 
 # Create an instance of Flask
 app=Flask(__name__)
@@ -14,16 +19,16 @@ app=Flask(__name__)
 def home():
 	return render_template("index.html")
 
-
 @app.route("/stocks", methods=["GET", "POST"])
 def stocks():
+	# sector_df=read_csv('')
 	# if request.method=="POST":
 	# define start and end dates
 	# start_date = '2016-05-20'
-	start_date = '2018-05-20'
+	# start_date = '2018-05-20'
 	# start_date = startDate
 	# end_date = endDate
-	end_date = '2021-05-20'
+	# end_date = '2021-05-20'
 	start_date=request.form.get("startdate")
 	end_date=request.form.get("enddate")
 	print(start_date)
@@ -152,8 +157,7 @@ def stocks():
 	# plt.title(companies[1])
 	# plt.show()
 
-	# import Normalizer
-	from sklearn.preprocessing import Normalizer
+
 	# create the Normalizer
 	normalizer = Normalizer()
 
@@ -164,9 +168,6 @@ def stocks():
 	# print(new.mean())
 
 
-	# import machine learning libraries
-	from sklearn.pipeline import make_pipeline
-	from sklearn.cluster import KMeans
 
 	# define normalizer
 	normalizer = Normalizer()
@@ -196,7 +197,7 @@ def stocks():
 	# print(df.sort_values('labels'))
 
 	# PCA
-	from sklearn.decomposition import PCA 
+	
 
 	# visualize the results
 	reduced_data = PCA(n_components = 2).fit_transform(new)
@@ -211,16 +212,26 @@ def stocks():
 
 	# Display df sorted by cluster labels
 
-	sorted_df=(df.sort_values('labels'))
+	sorted_df=df.sort_values('labels')
 
-	sorted_json =sorted_df.to_json()
+	# pd.merge(sorted_df, sector_df)
+
+	# sorted_json =sorted_df.to_json()
+	# sorted
 	# return sorted_json
 	# print('gothere')
 		# print(request.form.dict())
 		# response=make_response()
 		# return response
 	print('done training')
-	return sorted_json
+	# return sorted_json
+	# table in html string
+	table_html=sorted_df.to_html(index=False)
+
+	fig, ax=plt.subplots()
+	plt.plot([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])
+	fig.savefig('static/charts/group_0.png')
+	return render_template('index.html', output=table_html)
 #		return redirect('/' , data=sorted_json)
 		# print ("complete")
 	# return render_template("index.html", sorted_json)
