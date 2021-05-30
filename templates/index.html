@@ -18,6 +18,12 @@
           <a class="navbar-brand" href="">Stock Market Movement
             <img class="nav-ufo" src="../static/images/bullvsbear.png">
           </a>
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Charts">Charts</a>
+          </li>
         </div>
       </div>
     </nav>
@@ -25,11 +31,17 @@
       <h1>Stock Market Movement</h1>
       <p>Invest your money</p>
     </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <p>Enter a date range to see how 50 preselected stocks are clustered based on their normalized movement.</p>
     <div class="container">
       <div class="row margin-top-50">
         <div class="col-md-2">
           <aside class="filters">
             <div class="panel panel-default">
+              <!-- <p>Enter a date range to see how 50 preselected stocks are clustered based on their normalized movement.</p> -->
               <div class="panel-heading">Filter Search</div>
               <div class="panel-body">
                 <form action='/stocks' method='post'>
@@ -70,9 +82,9 @@
             </table> -->
           </div>
         </div>
-        <div>
+        <!-- <div>
           <img src="{{url_for('static', filename='charts/group_0.png')}}">
-        </div>
+        </div> -->
       </div>
     </div>
     <footer class="footer">
