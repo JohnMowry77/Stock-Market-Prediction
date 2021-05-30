@@ -21,7 +21,7 @@ def home():
 
 @app.route("/stocks", methods=["GET", "POST"])
 def stocks():
-	# sector_df=read_csv('')
+	# sector_df=read_csv('') #if you want to add sector build it out
 	# if request.method=="POST":
 	# define start and end dates
 	# start_date = '2016-05-20'
@@ -228,8 +228,13 @@ def stocks():
 	# table in html string
 	table_html=sorted_df.to_html(index=False)
 
+
+	
+
+
 	fig, ax=plt.subplots()
-	plt.plot([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])
+	plt.plot([date], [movements])
+
 	fig.savefig('static/charts/group_0.png')
 	return render_template('index.html', output=table_html)
 #		return redirect('/' , data=sorted_json)
