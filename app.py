@@ -12,6 +12,9 @@ from sklearn.preprocessing import Normalizer
 from sklearn.pipeline import make_pipeline
 from sklearn.cluster import KMeans
 
+import trading_calendars as tc
+import pytz
+
 # Create an instance of Flask
 app=Flask(__name__)
 
@@ -144,8 +147,15 @@ def stocks():
 	for i in range(0, row):
 	 movements[i,:] = np.subtract(stock_close[i,:], stock_open[i,:])
 
+	xnys = tc.get_calendar("XNYS")
+	date=xnys.sessions_in_range(
+		pd.Timestamp("2011-05-20", tz=pytz.UTC),
+		pd.Timestamp("2021-05-20", tz=pytz.UTC)
+	)
 
-	 # len(companies)
+	movements_df= pd.DataFrame(movements, index=companies_dict.keys(), columns=date)
+	movements_df=movements_df.transpose()
+	# len(companies)
 
 	# for i in range(0, len(companies)):
 	# 	print('Company: {}, Change: {}'.format(companies[i][0], sum(movements[i][:])))
@@ -233,8 +243,23 @@ def stocks():
 	table_html=sorted_df.to_html(index=False)
 
 	fig, ax=plt.subplots()
-	plt.plot([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])
-	fig.savefig('static/charts/group_0.png')
+	# plt.plot([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])
+
+	########KEVIN WE NEED YOUR HELP HERE
+	plt.plot(date, movements_df["Amazon"])
+	plt.xlabel("Date")
+	plt.ylabel("Movements")
+	plt.title("Amazon Stock Movement")
+	# plt.plot(date, movements_df) #We want to do it on the whole movements_df
+	fig.savefig('static/charts/cluster_move_one.png')
+
+
+	# sorted_df.companies.str.split(expand = True)
+	# sorted_df[["labels","companies", "symbol"]]=sorted_df.companies.str.split(",", expand =True,)
+	# merged_df = pd.merge(movements_df, sorted_df, on = companies)
+	str(sorted_df['companies'][:1]).split(',', expand = True)
+	#sorted_df["companies"]= sorted_df['companies'].str.split(",").str[:3]
+
 	return render_template('index.html', output=table_html)
 #		return redirect('/' , data=sorted_json)
 		# print ("complete")
