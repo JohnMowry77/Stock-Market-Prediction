@@ -256,10 +256,11 @@ def stocks():
 
 	# sorted_df.companies.str.split(expand = True)
 	# sorted_df[["labels","companies", "symbol"]]=sorted_df.companies.str.split(",", expand =True,)
-	# merged_df = pd.merge(movements_df, sorted_df, on = companies)
+
 	str(sorted_df['companies'][:1]).split(',', expand = True)
 	#sorted_df["companies"]= sorted_df['companies'].str.split(",").str[:3]
-
+	
+	# merged_df = pd.merge(movements_df, sorted_df, on = companies)
 	return render_template('index.html', output=table_html)
 #		return redirect('/' , data=sorted_json)
 		# print ("complete")
