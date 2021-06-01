@@ -24,7 +24,11 @@ def home():
 
 @app.route("/Charts")
 def charts():
-	return render_template('Charts.html', title="page")	
+	return render_template('Charts.html', title="page")
+
+@app.route("/clusters")
+def clusters():
+	return render_template('clusters.html', title="page")		
 
 @app.route("/stocks", methods=["GET", "POST"])
 def stocks():

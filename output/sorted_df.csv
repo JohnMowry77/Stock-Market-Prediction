@@ -1,51 +1,51 @@
 ,labels,companies,company_name,company_symbol
-24,0,"('Lincoln National', 'LNC')",Lincoln National,LNC
-3,0,"('Applied Materials Inc.', 'AMAT')",Applied Materials Inc.,AMAT
-31,0,"('NextEra Energy', 'NEE')",NextEra Energy,NEE
-5,0,"('Amazon', 'AMZN')",Amazon,AMZN
-6,0,"('American Express', 'AXP')",American Express,AXP
-39,0,"('Target Corp.', 'TGT')",Target Corp.,TGT
-34,0,"('Nucor Corp.', 'NUE')",Nucor Corp.,NUE
-21,0,"('Lennar Corp.', 'LEN')",Lennar Corp.,LEN
-20,1,"('Kroger Co.', 'KR')",Kroger Co.,KR
-26,1,"('Masco Corp.', 'MAS')",Masco Corp.,MAS
-15,1,"('IBM', 'IBM')",IBM,IBM
-32,1,"('Netflix Inc.', 'NFLX')",Netflix Inc.,NFLX
-13,1,"('Alphabet Inc. (Class A)', 'GOOGL')",Alphabet Inc. (Class A),GOOGL
-22,1,"('Lilly (Eli) & Co.', 'LLY')",Lilly (Eli) & Co.,LLY
-4,1,"('Amgen Inc.', 'AMGN')",Amgen Inc.,AMGN
-44,1,"('Visa Inc.', 'V')",Visa Inc.,V
-46,1,"('Verizon Communications', 'VZ')",Verizon Communications,VZ
-33,1,"('Northrop Grumman', 'NOC')",Northrop Grumman,NOC
-10,2,"('Deere & Co.', 'DE')",Deere & Co.,DE
+49,0,"('Waste Management Inc.', 'WM')",Waste Management Inc.,WM
+19,0,"('Coca Cola', 'KO')",Coca Cola,KO
+28,0,"('Medtronic plc', 'MDT')",Medtronic plc,MDT
+32,0,"('Netflix Inc.', 'NFLX')",Netflix Inc.,NFLX
+13,0,"('Alphabet Inc. (Class A)', 'GOOGL')",Alphabet Inc. (Class A),GOOGL
+35,0,"('Pepsi', 'PEP')",Pepsi,PEP
+22,0,"('Lilly (Eli) & Co.', 'LLY')",Lilly (Eli) & Co.,LLY
+21,1,"('Lennar Corp.', 'LEN')",Lennar Corp.,LEN
+34,1,"('Nucor Corp.', 'NUE')",Nucor Corp.,NUE
+39,1,"('Target Corp.', 'TGT')",Target Corp.,TGT
+31,1,"('NextEra Energy', 'NEE')",NextEra Energy,NEE
 7,2,"('Boeing', 'BA')",Boeing,BA
+10,2,"('Deere & Co.', 'DE')",Deere & Co.,DE
+43,2,"('United Parcel Service', 'UPS')",United Parcel Service,UPS
 25,2,"('MasterCard', 'MA')",MasterCard,MA
 11,2,"('General Electric', 'GE')",General Electric,GE
-48,3,"('Whirlpool Corp.', 'WHR')",Whirlpool Corp.,WHR
-0,3,"('Apple', 'AAPL')",Apple,AAPL
-1,3,"('AmerisourceBergen', 'ABC')",AmerisourceBergen,ABC
-23,3,"('Lockheed Martin', 'LMT')",Lockheed Martin,LMT
-14,3,"('HCA Healthcare', 'HCA')",HCA Healthcare,HCA
-12,3,"('General Motors', 'GM')",General Motors,GM
-36,4,"('Progressive Corp.', 'PGR')",Progressive Corp.,PGR
-47,4,"('Walgreen', 'WBA')",Walgreen,WBA
-40,4,"('TJX Companies Inc.', 'TJX')",TJX Companies Inc.,TJX
-37,4,"('Prologis', 'PLD')",Prologis,PLD
-9,4,"('Chevron Corp.', 'CVX')",Chevron Corp.,CVX
-8,5,"('Celanese', 'CE')",Celanese,CE
-16,5,"('Intel', 'INTC')",Intel,INTC
-19,6,"('Coca Cola', 'KO')",Coca Cola,KO
-28,6,"('Medtronic plc', 'MDT')",Medtronic plc,MDT
-35,6,"('Pepsi', 'PEP')",Pepsi,PEP
-49,6,"('Waste Management Inc.', 'WM')",Waste Management Inc.,WM
-29,7,"('3M Company', 'MMM')",3M Company,MMM
-27,7,"('McDonalds', 'MCD')",McDonalds,MCD
-17,7,"('Johnson & Johnson', 'JNJ')",Johnson & Johnson,JNJ
-18,7,"('JPMorgan Chase & Co.', 'JPM')",JPMorgan Chase & Co.,JPM
-30,8,"('Microsoft', 'MSFT')",Microsoft,MSFT
-38,8,"('Pioneer Natural Resources', 'PXD')",Pioneer Natural Resources,PXD
-41,8,"('Texas Instruments', 'TXN')",Texas Instruments,TXN
-42,8,"('UnitedHealth Group Inc.', 'UNH')",UnitedHealth Group Inc.,UNH
-2,8,"('Adobe Inc.', 'ADBE')",Adobe Inc.,ADBE
+37,3,"('Prologis', 'PLD')",Prologis,PLD
+9,3,"('Chevron Corp.', 'CVX')",Chevron Corp.,CVX
+40,3,"('TJX Companies Inc.', 'TJX')",TJX Companies Inc.,TJX
+47,3,"('Walgreen', 'WBA')",Walgreen,WBA
+36,3,"('Progressive Corp.', 'PGR')",Progressive Corp.,PGR
+48,4,"('Whirlpool Corp.', 'WHR')",Whirlpool Corp.,WHR
+23,4,"('Lockheed Martin', 'LMT')",Lockheed Martin,LMT
+0,4,"('Apple', 'AAPL')",Apple,AAPL
+14,4,"('HCA Healthcare', 'HCA')",HCA Healthcare,HCA
+12,4,"('General Motors', 'GM')",General Motors,GM
+1,4,"('AmerisourceBergen', 'ABC')",AmerisourceBergen,ABC
+29,5,"('3M Company', 'MMM')",3M Company,MMM
+18,5,"('JPMorgan Chase & Co.', 'JPM')",JPMorgan Chase & Co.,JPM
+17,5,"('Johnson & Johnson', 'JNJ')",Johnson & Johnson,JNJ
+27,5,"('McDonalds', 'MCD')",McDonalds,MCD
+26,6,"('Masco Corp.', 'MAS')",Masco Corp.,MAS
+46,6,"('Verizon Communications', 'VZ')",Verizon Communications,VZ
+15,6,"('IBM', 'IBM')",IBM,IBM
+33,6,"('Northrop Grumman', 'NOC')",Northrop Grumman,NOC
+20,6,"('Kroger Co.', 'KR')",Kroger Co.,KR
+44,6,"('Visa Inc.', 'V')",Visa Inc.,V
+4,6,"('Amgen Inc.', 'AMGN')",Amgen Inc.,AMGN
+42,7,"('UnitedHealth Group Inc.', 'UNH')",UnitedHealth Group Inc.,UNH
+2,7,"('Adobe Inc.', 'ADBE')",Adobe Inc.,ADBE
+41,7,"('Texas Instruments', 'TXN')",Texas Instruments,TXN
 45,8,"('Vulcan Materials', 'VMC')",Vulcan Materials,VMC
-43,9,"('United Parcel Service', 'UPS')",United Parcel Service,UPS
+6,8,"('American Express', 'AXP')",American Express,AXP
+38,8,"('Pioneer Natural Resources', 'PXD')",Pioneer Natural Resources,PXD
+5,8,"('Amazon', 'AMZN')",Amazon,AMZN
+30,8,"('Microsoft', 'MSFT')",Microsoft,MSFT
+3,8,"('Applied Materials Inc.', 'AMAT')",Applied Materials Inc.,AMAT
+24,8,"('Lincoln National', 'LNC')",Lincoln National,LNC
+8,9,"('Celanese', 'CE')",Celanese,CE
+16,9,"('Intel', 'INTC')",Intel,INTC
