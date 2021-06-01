@@ -43,10 +43,10 @@ body {
   margin: 0;
 }
 
-/* This CSS styles the ufo icon in the navbar */
+/* This CSS styles the bull/bear icon in the navbar */
 .nav-ufo {
   position: absolute;
-  bottom: 15px;
+  bottom: 55px;
   left: 240px;
   width: 35px;
   color: white;

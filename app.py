@@ -109,13 +109,6 @@ def stocks():
 	# Define which online source to use
 	data_source = 'yahoo'
 
-	# define start and end dates
-	# start_date = '2016-05-20'
-	# start_date = '2018-05-20'
-	# # start_date = startDate
-	# # end_date = endDate
-	# end_date = '2021-05-20'
-
 	# Use pandas_datareader.data.DataReader to load the desired data list(companies_dict.values()) used for python 3 compatibility
 	panel_data = web.DataReader(list(companies_dict.values()), data_source, start_date, end_date)
 
@@ -156,7 +149,7 @@ def stocks():
 	)
 
 	movements_df= pd.DataFrame(movements, index=companies_dict.keys(), columns=date)
-	# movements_df.to_csv('output/movements_df.csv')
+	movements_df.to_csv('output/movements_df.csv')
 	# movements_df=movements_df.transpose()
 	columns=list(movements_df.columns)
 	new_columns=[]
@@ -239,17 +232,20 @@ def stocks():
 	sorted_df[['company_name', 'company_symbol']]=sorted_df['companies'].astype('str').str.replace('(', '').str.replace(')', '').str.replace("'", '').str.split(', ', expand=True)#[1]
 	sorted_df=sorted_df.replace({'Alphabet Inc. Class A': 'Alphabet Inc. (Class A)', 
                    'Lilly Eli & Co.': 'Lilly (Eli) & Co.'})
-	combined_df=pd.merge(movements_df, sorted_df, left_index=True, right_on='company_name', how='outer')
-	combined_df=combined_df.drop(columns=['companies', 'company_name', 'company_symbol'])
+	# combined_df=pd.merge(movements_df, sorted_df, left_index=True, right_on='company_name', how='outer')
+	# combined_df=combined_df.drop(columns=['companies', 'company_name', 'company_symbol'])
 
-	for each_cluster in range(0, 10): 
-	    graph_df=combined_df[combined_df['labels']==each_cluster].drop(columns=['labels'])
-	    graph_df=graph_df.transpose()#.plot()
-	    # columns=graph_df.iloc[0]
-	    # graph_df.columns=columns
-	    graph_df.plot(rot=90)
-	    plt.legend(bbox_to_anchor=(1, 1))
-	    plt.savefig(f'static/charts/cluster_{each_cluster}.png')
+	# for each_cluster in range(0, 10): 
+	#     graph_df=combined_df[combined_df['labels']==each_cluster].drop(columns=['labels'])
+	#     graph_df=graph_df.transpose()#.plot()
+	#     # columns=graph_df.iloc[0]
+	#     # graph_df.columns=columns
+	#     columns=graph_df.iloc[0]
+	#     graph_df.columns=columns
+	#     graph_df.iloc[1:].plot(rot=90, legend=False)
+	#     graph_df.plot(rot=90)
+	#     plt.legend(bbox_to_anchor=(1, 1))
+	#     plt.savefig(f'static/charts/cluster_{each_cluster}.png')
 
 
 	# pd.merge(sorted_df, sector_df)
@@ -280,7 +276,7 @@ def stocks():
 
 	# sorted_df.companies.str.split(expand = True)
 	# sorted_df[["labels","companies", "symbol"]]=sorted_df.companies.str.split(",", expand =True,)
-	# sorted_df.to_csv('output/sorted_df.csv')
+	sorted_df.to_csv('output/sorted_df.csv')
 	# print(sorted_df['companies'].str.split(',', expand=True))
 	#sorted_df["companies"]= sorted_df['companies'].str.split(",").str[:3]
 	
