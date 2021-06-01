@@ -149,12 +149,20 @@ def stocks():
 
 	xnys = tc.get_calendar("XNYS")
 	date=xnys.sessions_in_range(
-		pd.Timestamp("2011-05-20", tz=pytz.UTC),
-		pd.Timestamp("2021-05-20", tz=pytz.UTC)
+		# pd.Timestamp("2011-05-20", tz=pytz.UTC),
+		# pd.Timestamp("2021-05-20", tz=pytz.UTC)
+		pd.Timestamp(start_date, tz=pytz.UTC), 
+		pd.Timestamp(end_date, tz=pytz.UTC)
 	)
 
 	movements_df= pd.DataFrame(movements, index=companies_dict.keys(), columns=date)
-	movements_df=movements_df.transpose()
+	# movements_df.to_csv('output/movements_df.csv')
+	# movements_df=movements_df.transpose()
+	columns=list(movements_df.columns)
+	new_columns=[]
+	for each_column in columns: 
+	    new_columns.append(each_column.tz_convert(None))#.replace('00:00:00+00:00', ''))
+	movements_df.columns=new_columns
 	# len(companies)
 
 	# for i in range(0, len(companies)):
@@ -228,6 +236,22 @@ def stocks():
 
 	sorted_df=df.sort_values('labels')
 
+	sorted_df[['company_name', 'company_symbol']]=sorted_df['companies'].astype('str').str.replace('(', '').str.replace(')', '').str.replace("'", '').str.split(', ', expand=True)#[1]
+	sorted_df=sorted_df.replace({'Alphabet Inc. Class A': 'Alphabet Inc. (Class A)', 
+                   'Lilly Eli & Co.': 'Lilly (Eli) & Co.'})
+	combined_df=pd.merge(movements_df, sorted_df, left_index=True, right_on='company_name', how='outer')
+	combined_df=combined_df.drop(columns=['companies', 'company_name', 'company_symbol'])
+
+	for each_cluster in range(0, 10): 
+	    graph_df=combined_df[combined_df['labels']==each_cluster].drop(columns=['labels'])
+	    graph_df=graph_df.transpose()#.plot()
+	    # columns=graph_df.iloc[0]
+	    # graph_df.columns=columns
+	    graph_df.plot(rot=90)
+	    plt.legend(bbox_to_anchor=(1, 1))
+	    plt.savefig(f'static/charts/cluster_{each_cluster}.png')
+
+
 	# pd.merge(sorted_df, sector_df)
 
 	# sorted_json =sorted_df.to_json()
@@ -242,26 +266,26 @@ def stocks():
 	# table in html string
 	table_html=sorted_df.to_html(index=False)
 
-	fig, ax=plt.subplots()
+	# fig, ax=plt.subplots()
 	# plt.plot([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])
 
 	########KEVIN WE NEED YOUR HELP HERE
-	plt.plot(date, movements_df["Amazon"])
-	plt.xlabel("Date")
-	plt.ylabel("Movements")
-	plt.title("Amazon Stock Movement")
+	# plt.plot(date, movements_df["Amazon"])
+	# plt.xlabel("Date")
+	# plt.ylabel("Movements")
+	# plt.title("Amazon Stock Movement")
 	# plt.plot(date, movements_df) #We want to do it on the whole movements_df
-	fig.savefig('static/charts/cluster_move_one.png')
+	# fig.savefig('static/charts/cluster_move_one.png')
 
 
 	# sorted_df.companies.str.split(expand = True)
 	# sorted_df[["labels","companies", "symbol"]]=sorted_df.companies.str.split(",", expand =True,)
-
-	str(sorted_df['companies'][:1]).split(',', expand = True)
+	# sorted_df.to_csv('output/sorted_df.csv')
+	# print(sorted_df['companies'].str.split(',', expand=True))
 	#sorted_df["companies"]= sorted_df['companies'].str.split(",").str[:3]
 	
 	# merged_df = pd.merge(movements_df, sorted_df, on = companies)
-	return render_template('index.html', output=table_html)
+	return render_template('predict.html', output=table_html)#, images=image_links)
 #		return redirect('/' , data=sorted_json)
 		# print ("complete")
 	# return render_template("index.html", sorted_json)
