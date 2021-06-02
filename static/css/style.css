@@ -46,7 +46,7 @@ body {
 /* This CSS styles the bull/bear icon in the navbar */
 .nav-ufo {
   position: absolute;
-  bottom: 55px;
+  bottom: 65px;
   left: 240px;
   width: 35px;
   color: white;

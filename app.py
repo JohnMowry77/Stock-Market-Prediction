@@ -28,7 +28,8 @@ def charts():
 
 @app.route("/clusters")
 def clusters():
-	return render_template('clusters.html', title="page")		
+	return render_template('clusters.html', title="page")
+
 
 @app.route("/stocks", methods=["GET", "POST"])
 def stocks():
@@ -248,9 +249,23 @@ def stocks():
 	#     graph_df.columns=columns
 	#     graph_df.iloc[1:].plot(rot=90, legend=False)
 	#     graph_df.plot(rot=90)
-	#     plt.legend(bbox_to_anchor=(1, 1))
-	#     plt.savefig(f'static/charts/cluster_{each_cluster}.png')
+	#     plt.legend(loc='upper left')
+	#     image_links= plt.savefig(f'static/charts/cluster_{each_cluster}.png')
 
+	# combined_df=pd.merge(movements_df, sorted_df, left_on='Unnamed: 0', right_on='company_name', how='outer')
+	# combined_df=combined_df.drop(columns=['companies', 'company_name', 'company_symbol'])
+	# combined_df
+	# for each_cluster in range(0, 10):
+	#     graph_df=combined_df[combined_df['labels']==each_cluster].drop(columns=['labels'])
+	#     graph_df=graph_df.transpose()#.plot()
+	#     columns=graph_df.iloc[0]
+	#     graph_df.columns=columns
+	#     graph_df.iloc[1:].plot(rot=90, legend=False)
+	# #     plt.subplots(figsize=(6, 2))
+	# #     plt.figure(figsize=(10,10))
+	# #     plt.legend(bbox_to_anchor=(1, 1))
+	#     plt.legend(loc = 'upper left')
+	#     plt.savefig(f'static/charts/cluster_{each_cluster}')
 
 	# pd.merge(sorted_df, sector_df)
 
