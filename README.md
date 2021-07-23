@@ -2,7 +2,7 @@
 
 ![Capture](https://user-images.githubusercontent.com/75405590/120405085-015c2180-c305-11eb-9193-89674861be1d.JPG)
 
-![Capture](/Users/johnmowry/Documents/Denver-Data-12-2020/WorkHereNew/Homework/Stock_Market_Project/Stock-Market-Prediction/static/images/cluster_results.jpg)
+![Capture](https://user-images.githubusercontent.com/72773479/126729318-a823d57c-8348-4182-a3d0-5b97f45e3ab0.png)
 
 David Alberghini, Mark Blankenship, John Mowry, & Bryce Wilkinson
 
